@@ -1,0 +1,18 @@
+<!-- home.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home page</title>
+</head>
+<body>
+	<h1>Sales and inventory prediction</h1>
+	<form action="/predict" method="post">
+		<label for="year_week">year-week :</label>
+		<input type="text" id="year_week" name="year_week"><br><br>
+		<label for="product_number">product_number :</label>
+		<input type="text" id="product_number" name="product_number"><br><br>
+		<input type="submit" value="Predict">
+	</form>
+</body>
+</html>
