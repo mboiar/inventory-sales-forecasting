@@ -2,7 +2,6 @@ from flask import Flask, request, render_template
 import pandas as pd
 import joblib
 
-
 app = Flask(__name__)
 
 model = None
@@ -16,7 +15,7 @@ def predict():
     year_week = request.form['year_week']
     product_number = request.form['product_number']
     
-    data = pd.DataFrame({'year_week': [year_week], 'product_number': [product_number]})
+    data = pd.DataFrame({'year_week': [year_week], 'product_number': [int(product_number)]})
 
     train_df = pd.read_csv('dataset/train.csv')
     product_mapping = train_df[['product_number', 'prod_category', 'segment', 'specs', 'display_size']].drop_duplicates()
